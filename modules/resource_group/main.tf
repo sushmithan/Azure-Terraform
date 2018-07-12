@@ -1,14 +1,8 @@
-variable resource_group_name {
-  description = "Resource group name"
+resource "azurerm_resource_group" "resourceGroup" {
+  name     =  "${var.resource_group_name}"
+  location = "${var.location}"
+      tags {
+        environment = "non-prod"
+    }
 }
 
-variable "storageAccType"{
-description = "storage account type"
-default = "Standard_LRS"
-}
-variable "location" {}
-variable resource_group_id {
-  default = ""
-  description = "Resource group ID"
-}
-variable uid {}
